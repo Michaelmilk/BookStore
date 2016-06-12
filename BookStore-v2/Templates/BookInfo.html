@@ -1,0 +1,51 @@
+﻿
+<div>
+    <div class="form-group">
+        <b class="control-label col-md-2">Name</b>
+        <div class="col-md-10">
+            <input type="text" ng-model="book.Name" class="form-control" name="inputName" placeholder="book name"
+                   ng-readonly="isreadonly" autocomplete="off" required />
+            <span style="color:red" ng-show="myForm.inputName.$dirty && myForm.inputName.$invalid">
+                <span ng-show="myForm.inputName.$error.required">书名是必须的。</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Author</b>
+        <div class="col-md-10">
+            <input type="text" ng-model="book.Author" class="form-control" name="inputAuthor"
+                   ng-pattern="/^[a-zA-Z0-9 ]*$/" placeholder="book author" autocomplete="off" required>
+            <span style="color:red" ng-show="myForm.inputAuthor.$error.pattern">Not a valid number!</span>
+            <span style="color:red" ng-show="myForm.inputAuthor.$dirty && myForm.inputAuthor.$invalid">
+                <span ng-show="myForm.inputAuthor.$error.required">作者是必须的。</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Type</b>
+        <div class="col-md-10">
+            <select ng-model="book.Type" ng-options="x for x in opts" name="inputType" required>
+                <option value="">--Type--</option>
+            </select>
+            <span style="color:red" ng-show="myForm.inputType.$dirty && myForm.inputType.$invalid">
+                <span ng-show="myForm.inputType.$error.required">类型是必须的。</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Price</b>
+        <div class="col-md-10">
+            <input type="number" ng-model="book.Price" class="form-control" id="inputPrice" placeholder="book price" autocomplete="off"  required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <b class="control-label col-md-2">Description</b>
+        <div class="col-md-10">
+            <input type="text" ng-model="book.Description" class="form-control" id="inputDesc" placeholder="book description" autocomplete="off" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿<!--pagination-->
+<div>
+    <nav>
+        <ul class="pagination  pagination-main">
+            <li ng-class="disablePrevPage()">
+                <a href ng-click="prevPage()">
+                    &laquo;
+                </a>
+            </li>
+            <li ng-repeat="n in pageRange()" ng-class="{active: n == currentPage}" ng-click="setPage(n)" class="pointer">
+                <a>{{n + 1}}</a>
+            </li>
+            <li ng-class="disableNextPage()">
+                <a href ng-click="nextPage()">
+                    &raquo;
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!--pagination-->
